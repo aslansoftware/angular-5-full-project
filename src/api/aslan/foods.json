@@ -1,0 +1,38 @@
+[
+  {
+    "foodName": "ביצה",
+    "amount": "30",
+    "protein": 20,
+    "Carbohydrates": 20,
+    "Fats": 50
+  },
+  {
+    "foodName": "חזה עוף",
+    "amount": "100",
+    "protein": 40,
+    "Carbohydrates": 20,
+    "Fats": 20
+  },
+  {
+    "foodName": "סלמון",
+    "amount": "100",
+    "protein": 10,
+    "Carbohydrates": 20,
+    "Fats": 20
+  },
+  {
+    "foodName": "סטייק",
+    "amount": "100",
+    "protein": 22,
+    "Carbohydrates": 20,
+    "Fats": 20
+  },
+  {
+    "foodName": "ביצה",
+    "amount": "L",
+    "protein": 20,
+    "Carbohydrates": 20,
+    "Fats": 20
+  }
+
+]

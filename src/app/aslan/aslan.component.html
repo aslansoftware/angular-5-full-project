@@ -1,0 +1,132 @@
+
+
+<!-- Actual directive --->
+<div class="panel panel-default">
+  <div class="panel-heading"><h1>{{pageTitle}}</h1>
+    <p>We will display the form here and we will add data to the list</p></div>
+  <div class="test-joe">
+    <div>type: <strong>{{isSidebarVisible}}</strong></div>
+
+
+
+
+    <select [(ngModel)]="selectedType.value" (input)="toggleSidebar($event)">
+      <option *ngFor="let type of types" value={{type.name}}>{{type.name}}</option>
+    </select>
+
+
+
+
+    <!--<input [ngModel]="numberValue | mesaurement" (ngModelChange)="numberValue=$event" name="inputField" type="text" />-->
+    <!--<h4> Testing Mesarument Pipe converter</h4>-->
+    <!--<p> First value USD: {{ numberValue | mesaurement:"usd"}}</p>-->
+    <!--<p> First value EURO: {{ numberValue | mesaurement:"euro"}}</p>-->
+    <!--<p> First value NIS: {{ numberValue | mesaurement:"nis"}}</p>-->
+  </div>
+  <div class="panel-body">
+
+
+  <form #form="ngForm" novalidate>
+    <div class="form-group" [class.has-error]="idField.invalid && idField.touched">
+      <label>ID</label>
+      <input #idField="ngModel" id="id" for="name" type="text" class="form-control" required name="id" placeholder="ID" [(ngModel)]="model.ID">
+    </div>
+    <div *ngIf="idField.invalid && idField.touched" class="alert alert-danger">
+      ID Field is required
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input #nameField="ngModel" id="name" for="description" type="text" class="form-control" required name="name" placeholder="NAME"  [(ngModel)]="model.NAME">
+    </div>
+    <div *ngIf="nameField.invalid" class="alert alert-danger">
+      NAME Field is required
+    </div>
+    <div class="form-group">
+      <label>ID</label>
+      <input #descriptionField="ngModel" id="description" require for="id" type="text" class="form-control" required name="description" placeholder="DESCRIPTION"  [(ngModel)]="model.DESCRIPTION">
+    </div>
+    <div *ngIf="descriptionField.invalid" class="alert alert-danger">
+      DESCRIPTION Field is required
+    </div>
+    <button [disabled]="form.invalid" type="button" class="btn btn-success">OK</button>
+  </form>
+  {{form.pristine}}
+    <!-- form.pristine - boolean that will tell us if form is touched by the user or not
+     form.pristine = true;  untouched yet
+     form.pristine = false; user changed something in the form
+
+     u need to add ( ngModel ) in the input or button you want, to let the form pristine that is part
+     of the form module
+     also adding name attribute
+     -->
+    <br />
+    Model: {{model | json}}
+    <br />
+    Angular: {{form.value | json}}
+    <h3>Classes</h3>
+    <h4>ID: {{idField.className}}</h4>
+    <h4>Name: {{nameField.className}}</h4>
+    <h4>Description: {{descriptionField.className}}</h4>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading"><h1>{{listTitle}}</h1> </div>
+  <div class="panel-body">
+
+<div class='table-responsive col-md-12'>
+  <table class='table'
+         *ngIf='aslansList && aslansList.length'>
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let aslan of aslansList'>
+      <td>
+        {{ aslan.aslanId }}
+
+      </td>
+      <td>{{ aslan.aslanName | lowercase }}</td>
+      <td>{{ aslan.aslanDescription }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><h1>Food Test Aslan</h1> </div>
+    <div class="panel-body">
+
+      <div class='table-responsive col-md-12'>
+        <table class='table'
+               *ngIf='aslansList && aslansList.length'>
+          <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor='let aslan of aslansList'>
+            <td>
+              {{ aslan.aslanId }}
+
+            </td>
+            <td>{{ aslan.aslanName | lowercase }}</td>
+            <td>{{ aslan.aslanDescription }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+  </div>

@@ -1,0 +1,11 @@
+<div dropdown [isOpen]="isOpen" [autoClose]="true" placement="top">
+
+  <ng-content #input>
+  </ng-content>
+
+  <div *dropdownMenu class="dropdown-menu" role="menu">
+    <div *ngFor="let item of viewModel" class="dropdown-item">
+      {{item}}
+    </div>
+  </div>
+</div>

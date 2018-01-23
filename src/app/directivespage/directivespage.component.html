@@ -1,0 +1,26 @@
+
+
+<!-- Actual directive --->
+<div class="panel panel-default">
+  <div class="panel-heading"><h1>{{pageTitle}}</h1>
+    <p>list of directives</p>
+    <p>1. bigText attribute directive </p>
+    <p>2. appHighligh - highligh text background yellow </p>
+    <p>3. </p>
+
+  </div>
+  <div class="panel-body">
+    <div bigText>This text is huge.</div>.
+    <p appHighlight>Heightlighted!</p>
+
+    <p>Apply conditional styles and classes to elements
+      We are using <strong appHighlight>[style.color]="'blue'"</strong> </p>
+    <p [style.color]="'blue'">Directives are awesome</p>
+
+    <p>Hide and show elements, conditionally (different from creating and destroying elements)
+      We are using: <strong appHighlight> [hidden]="false"</strong>
+    </p>
+    <button (click)="hideOrHandler()">Hide/Show!</button>
+    <p [hidden]="shouldHide">Directives are awesome</p>
+  </div>
+</div>

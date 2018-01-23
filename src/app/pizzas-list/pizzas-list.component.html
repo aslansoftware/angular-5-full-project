@@ -1,0 +1,48 @@
+<div class="panel panel-primary panel-primary-style-bottom">
+  <div class="panel-heading">
+    Pizza Data
+  </div>
+  <div class="panel-body">
+    <div class="container">
+      <div class="row">
+        <button type="button" class="btn btn-success">Add</button>
+      </div>
+      <div class="row body-width">
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group mr-2" role="group" aria-label="First group" *ngFor="let number of numberOfSlicesCollection">
+            <button (click)="setSlicesNumber(number)" type="button" class="btn btn-secondary">{{number}}</button>
+          </div>
+        </div>
+      </div>
+      <div class="row body-width border-black-double">
+         {{numOfSlices}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="panel panel-primary panel-primary-style-bottom">
+  <div class="panel-heading">
+    Pizza Data
+  </div>
+  <div class="panel-body">
+    <div class="container">
+      <div class="row body-width">
+        <div class="col-lg-2 type-of-pizza-border-radius-2">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a (click)="setTypeOfPizza('Regular')">Regular</a></li>
+            <li><a (click)="setTypeOfPizza('Olives')">Olives</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-9 type-of-pizza-border-radius-9">
+          {{this.typeOfPizza}}
+          asdasd
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+-->

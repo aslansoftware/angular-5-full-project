@@ -1,0 +1,17 @@
+.panel-primary-style-bottom {
+  padding-bottom: 10px;
+}
+
+.type-of-pizza-border-radius-9 {
+  margin-left: 10px;
+  border: 1px black double;
+
+}
+.type-of-pizza-border-radius-2 {
+  margin-right: 10px;
+}
+
+.border-black-double {
+  margin-top: 10px;
+  border: 1px black double;
+}

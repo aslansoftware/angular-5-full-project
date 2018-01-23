@@ -1,0 +1,97 @@
+﻿<div class="panel panel-primary panel-primary-style">
+  <div class="panel-heading">
+    {{pageTitle}}
+  </div>
+  <div class="panel-body panel-body-style">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Contact Data
+
+      </div>
+      <div class="panel-body">
+        <div class="container">
+          <div class="row form-group">
+            <form #form="ngForm" novalidate class="form-width-100">
+              <div class="form-group col-lg-3" [class.has-error]="idField.invalid && idField.touched">
+                <label>ID</label>
+                <input #idField="ngModel" id="id" for="name" type="text" class="form-control" required name="id"
+                       placeholder="ID" [(ngModel)]="model.ID">
+                <div *ngIf="idField.invalid && idField.touched" class="alert alert-danger">
+                  ID Field is required
+                </div>
+              </div>
+              <div class="form-group col-lg-3" [class.has-error]="nameField.invalid && nameField.touched">
+                <label>Name</label>
+                <input #nameField="ngModel" id="name" for="description" type="text" class="form-control" required
+                       name="name" placeholder="NAME" [(ngModel)]="model.NAME">
+                <div *ngIf="nameField.invalid && nameField.touched" class="alert alert-danger">
+                  NAME Field is required
+                </div>
+              </div>
+              <div class="form-group col-lg-3" [class.has-error]="descriptionField.invalid && descriptionField.touched">
+                <label>ID</label>
+                <input #descriptionField="ngModel" id="description" require for="id" type="text" class="form-control"
+                       required name="description" placeholder="DESCRIPTION" [(ngModel)]="model.DESCRIPTION">
+                <div *ngIf="descriptionField.invalid && descriptionField.touched" class="alert alert-danger">
+                  DESCRIPTION Field is required
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row form-group" *ngIf='ListOfPizzas && ListOfPizzas.length'>
+            <div class="container" *ngFor='let pizza of buildArr(ListOfPizzas)'>
+              <div *ngFor="let pizzaRow of pizza">
+                <div class="card-border-radius-width col-lg-3">
+                  <div class="card-block">
+                    <span style="background: lightseagreen" class="badge">{{pizzaRow.value.length}}</span>
+                    <h4 class="card-title"><strong>{{pizzaRow.key}}</strong> {{pizzaRow.value[0].type}}</h4>
+                    <p class="card-text">{{pizzaRow.value[0].description}}.</p>
+                    <a disabled="true" class="btn btn-primary"><span class="badge">{{pizzaRow.value[0].price}}Nis</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row form-group form-button-float-right ">
+            <button [disabled]="form.invalid" type="button" class="btn btn-success">OK</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <pm-pizzas-list></pm-pizzas-list>
+
+    <!--  <div class="row" ng-if="false">
+              <div class='table-responsive'>
+                <table class='table table-striped'> <!-- *ngIf='ListOfPizzas && ListOfPizzas.length'>
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">
+        Name
+      </th>
+      <th scope="col">Size</th>
+      <th scope="col">Description</th>
+      <th scope="col">Available</th>
+      <th scope="col">Type</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let pizza of ListOfPizzas'>
+      <td>
+        {{pizza.name}}
+      </td>
+      <td>
+        {{pizza.name}}
+      </td>
+      <td>{{pizza.description}}</td>
+      <td>{{pizza.available}}</td>
+      <td>{{pizza.type}}</td>
+      <td>
+        {{pizza.price}}
+      </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>-->
